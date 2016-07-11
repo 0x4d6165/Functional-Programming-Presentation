@@ -59,11 +59,11 @@ export default class Presentation extends React.Component {
               Functional Programming
             </Heading>
             <Heading size={1} fit caps>
-              Basically, the best thing ever.
+              Basically, the best thing ever. Woooooo.
             </Heading>
           </Slide>
           <Slide transition={["slide"]} bgColor="black" notes="Lambda Calc and all that">
-            <Image src={images.lambda.replace("/", "")} margin="0px auto 40px" height="293px"/>
+            {/* <Image src={images.lambda.replace("/", "")} margin="0px auto 40px" height="293px"/> */}
             <Heading size={2} caps fit textColor="primary" textFont="primary">
               Wait what?
             </Heading>
