@@ -59,7 +59,7 @@ export default class Presentation extends React.Component {
               Functional Programming
             </Heading>
             <Heading size={1} fit caps>
-              Basically, the best thing ever. Woooooo.
+              Basically, the best thing ever. Woooooo. (It's cool)
             </Heading>
           </Slide>
           <Slide transition={["slide"]} bgColor="black" notes="Lambda Calc and all that">
