@@ -1,7 +1,0 @@
-nginx:
-  build: nginx/.
-  volumes:
-    - ./dist:/var/www/dist
-    - ./static:/var/www/static
-  ports:
-    - 80:80
