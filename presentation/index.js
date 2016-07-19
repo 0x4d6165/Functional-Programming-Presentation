@@ -36,6 +36,7 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   math: require("../assets/math.jpg"),
   haskellbg: require("../assets/haskellbg.png"),
+  emacs: require("../assets/emacs.png"),
 };
 
 preloader(images);
@@ -149,6 +150,67 @@ export default class Presentation extends React.Component {
                 </Appear>
               </Fill>
             </Layout>
+          </Slide>
+          <Slide transition={["zoom"]} bgColor="black">
+            <Heading caps size={1} textColor="primary">
+              FizzBuzz
+            </Heading>
+            <Layout>
+              <Fill>
+                <Appear>
+                  <CodePane
+                    lang="cpp"
+                    source={require("raw!../assets/fizzbuzzcpp.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
+              </Fill>
+              <Fill>
+                <Appear>
+                  <CodePane
+                    lang="haskell"
+                    source={require("raw!../assets/fizzbuzzhs.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide transition={["zoom"]} bgColor="primary">
+            <Heading caps fit size={1} textColor="white">
+              Removing substring from string
+            </Heading>
+            <Layout>
+              <Fill>
+                <Appear>
+                  <CodePane
+                    lang="cpp"
+                    source={require("raw!../assets/substringcpp.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
+              </Fill>
+              <Fill>
+                <Appear>
+                  <CodePane
+                    lang="haskell"
+                    source={require("raw!../assets/substringhs.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
+              </Fill>
+            </Layout>
+          </Slide>
+          <Slide transition={["slide"]} bgImage={images.emacs.replace("/", "")} bgDarken={0.75}>
+            <Heading caps fit size={1} textColor="primary">
+              Some things I like in Haskell
+            </Heading>
+            <List textColor="white">
+              <Appear><ListItem>Infinite lists ([2,4..])</ListItem></Appear>
+              <Appear><ListItem>Custom data types and typeclasses</ListItem></Appear>
+              <Appear><ListItem>The syntax (I think it's pretty)</ListItem></Appear>
+              <Appear><ListItem>The radically different way to write functions (pattern matching, guards, etc.)</ListItem></Appear>
+            </List>
           </Slide>
         </Deck>
       </Spectacle>

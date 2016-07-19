@@ -1,0 +1,19 @@
+module Main (main) where
+
+import qualified Data.List as List
+
+removeSub :: String -> String -> String
+removeSub "" _ = ""
+removeSub x "" = x
+removeSub l@(x:xs) sub
+  | xsL < subL = l
+  | xsL == subL && xs == sub = x : ""
+  | List.take subL l /= sub = x : removeSub xs sub
+  | otherwise = removeSub skip sub
+  where subL = List.length sub
+        skip = List.drop (subL-1) xs
+        xsL = List.length xs
+
+main :: IO()
+main = do
+  putStrLn removeSub "red tuna, blue tuna, black tuna, one tuna" " tuna"
