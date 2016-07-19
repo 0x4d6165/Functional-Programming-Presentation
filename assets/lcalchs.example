@@ -1,0 +1,18 @@
+module Main (main) where
+
+func1 :: Int -> Int
+func1 = (+) 1
+
+func2 :: Int -> Int -> Int
+func2 x = (+) x
+
+func3a :: Int -> Int -> Int
+func3a x = (-) x
+func3b :: (Int -> Int -> Int) -> Int -> Int -> Int
+func3b f x y = f y x
+
+main :: IO()
+main = do
+  print $ func1 3
+  print $ func2 1 2
+  print $ func3b func3a 4 5

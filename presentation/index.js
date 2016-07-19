@@ -34,7 +34,8 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  math: require("../assets/math.jpg")
+  math: require("../assets/math.jpg"),
+  haskellbg: require("../assets/haskellbg.png"),
 };
 
 preloader(images);
@@ -88,72 +89,66 @@ export default class Presentation extends React.Component {
                 Lambda calculus is a system where computations are expressed as functions. For example:
               </Text>
             </Appear>
-            <Appear>
-              <CodePane
-                lang="clojure"
-                source={require("raw!../assets/lcalc.example")}
-                margin="20px auto"
-              />
-            </Appear>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
             <Layout>
               <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
+                <Appear>
+                  <CodePane
+                    lang="haskell"
+                    source={require("raw!../assets/lcalc.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
               </Fill>
               <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
+                <Appear>
+                  <CodePane
+                    lang="haskell"
+                    source={require("raw!../assets/lcalchs.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
               </Fill>
             </Layout>
           </Slide>
+          <Slide transition={["slide"]} bgImage={images.haskellbg.replace("/", "")} bgDarken={0.75}>
+            <Heading caps fit>Haskell</Heading>
+            <List textColor="primary">
+              <Appear><ListItem>Purely functional</ListItem></Appear>
+              <Appear><ListItem>Lazy (most of the time)</ListItem></Appear>
+              <Appear><ListItem>Compiled</ListItem></Appear>
+              <Appear><ListItem>Obsessed with recursion</ListItem></Appear>
+              <Appear><ListItem>AWESOME</ListItem></Appear>
+            </List>
+          </Slide>
           <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
+            <Heading caps fit size={1} textColor="primary">
+              Examples...
+            </Heading>
           </Slide>
           <Slide transition={["spin", "zoom"]} bgColor="tertiary">
             <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
+              Fibonacci Sequence
             </Heading>
-            {/* <Markdown> */}
-            {/* {` */}
-            {/* ![Markdown Logo](${images.markdown.replace("/", "")}) */}
-            {/*  */}
-            {/* You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax */}
-            {/* * Lists too! */}
-            {/* * With ~~strikethrough~~ and _italic_ */}
-            {/* * And lets not forget **bold** */}
-            {/* `} */}
-            {/* </Markdown> */}
-          </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
+            <Layout>
+              <Fill>
+                <Appear>
+                  <CodePane
+                    lang="cpp"
+                    source={require("raw!../assets/fibcpp.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
+              </Fill>
+              <Fill>
+                <Appear>
+                  <CodePane
+                    lang="haskell"
+                    source={require("raw!../assets/fibhs.example")}
+                    margin="20px auto"
+                  />
+                </Appear>
+              </Fill>
+            </Layout>
           </Slide>
         </Deck>
       </Spectacle>
